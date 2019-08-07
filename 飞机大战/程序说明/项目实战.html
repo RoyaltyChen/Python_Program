@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>项目实战</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>@[TOC]目录</p>
+<h1>项目实战 -- 飞机大战</h1>
+<ul>
+<li>强化 <strong>面向对象</strong>设计</li>
+<li>体验使用 <code>pygame</code>模块进行 <strong>游戏开发</strong></li>
+</ul>
+<h2>实战步骤</h2>
+<ol>
+<li><code>pygame</code>快速体验</li>
+<li><strong>飞机大战</strong>实战</li>
+</ol>
+<h2>确认模块 -- pygame</h2>
+<ul>
+<li><code>pygame</code> 就是一个python模块，专为电子游戏设计</li>
+<li>
+官方网站: <a href="https://www.pygame.org">https://www.pygame.org</a>
+<ul>
+<li><strong>提示</strong>: 要学习第三方模块，通常最好的参考资料就在官方网站</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>网站栏目</th>
+	<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>GettingStarted</td>
+	<td>在各平台安装模块的说明</td>
+</tr>
+<tr>
+	<td>Docs</td>
+	<td>pygame模块所有<strong>类</strong>和<strong>子类</strong>的参考手册</td>
+</tr>
+</tbody>
+</table>
+<h2>安装pygame</h2>
+<p><code>pip install pygame</code></p>
+<h2>验证安装</h2>
+<p><code>python -m pygame.example.aliens</code></p>
+<h1>pygame 快速入门</h1>
+<h2>目标</h2>
+<ol>
+<li>项目准备</li>
+<li>使用 <code>pygame</code>创建图形窗口</li>
+<li>理解<strong>图像</strong>并实现图像绘制</li>
+<li>理解<strong>游戏循环</strong>和<strong>游戏时钟</strong></li>
+<li>理解<strong>精灵</strong>和<strong>精灵组</strong></li>
+</ol>
+<h2>项目准备</h2>
+<ol>
+<li>新建<strong>飞机大战</strong>项目</li>
+<li>新建一个 <code>hm_pygame入门.py</code></li>
+<li>导入**游戏素材图片</li>
+</ol>
+<h5>游戏的第一印象</h5>
+<ul>
+<li>把一些 <strong>静止的图象</strong> 绘制到 <strong>游戏窗口</strong> 中</li>
+<li>根据 <strong>用户的交互</strong> 或其他情况，<strong>移动</strong> 这些图像，产生动画效果</li>
+<li>根据 <strong>图像之间</strong> 是否发生重叠，判断 <strong>敌机是否被摧毁</strong> 等其他情况</li>
+</ul>
+<h2>01.使用pygame创建图形窗口</h2>
+<h3>小节目标</h3>
+<ol>
+<li>游戏的初始化和退出</li>
+<li>理解游戏中的坐标系</li>
+<li>创建游戏主窗口</li>
+<li>简单的游戏循环</li>
+</ol>
+<blockquote>
+<p>可以将图片素材<strong>绘制</strong>到<strong>游戏的窗口</strong>上，开发游戏之前需要先知道 <strong>如何建立游戏窗口!</strong></p>
+</blockquote>
+<h3>1.1游戏的初始化和退出</h3>
+<ul>
+<li>要使用 <code>pygame</code>提供的所有功能之前，需要调用 <code>init</code>方法</li>
+<li>在游戏结束前需要调用一下<code>quit</code>方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>方法</th>
+	<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>pygame.init()</td>
+	<td>导入并初始化所有pygame模块，使用其他模块之前，必须先调用init方法</td>
+</tr>
+<tr>
+	<td>pygame.quit()</td>
+	<td>写在所有pygame模块，在游戏结束之前调用！</td>
+</tr>
+</tbody>
+</table>
+<p><img src="pygame.png" alt="pygame流程" /></p>
+<h3>1.2理解游戏中的坐标系</h3>
+<ul>
+<li>
+坐标系
+<ul>
+<li><strong>原点</strong>在<strong>左上角</strong><code>(0,0)</code></li>
+<li><strong>x轴</strong> 水平方向向<strong>右</strong>，逐渐增加</li>
+<li><strong>y轴</strong>垂直方向向<strong>下</strong>，逐渐增加</li>
+</ul>
+</li>
+</ul>
+<p><img src="zbx.png" alt="坐标系" />
+- 在游戏中，<strong>所有可见的元素</strong> 都是以 <strong>矩形区域</strong> 来描述位置的
+    - 要描述一个矩形区域有四个要素: <code>(x,y) (width,height)</code>
+-  <code>pygame</code> 专门提供一个类<code>pygame.Rect</code>用于描述 <strong>矩形区域</strong>
+<code>Rect(x,y,width,height) -&gt; Rect</code></p>
+<p><img src="rect.png" alt="Rect" /></p>
+<p><code>Rect.size返回值是元组(width,height)</code></p>
+<h4>提示</h4>
+<ul>
+<li><code>pygame.Rect</code>是一个比较特殊的类，内部只是封装了一些数字计算</li>
+<li>不执行 <code>pygame.init()</code>方法同样能够直接使用</li>
+</ul>
+<h4>案例演练</h4>
+<h4>需求</h4>
+<ol>
+<li>定义 <code>hero_rect()</code>矩形描述 <strong>英雄的位置和大小</strong></li>
+<li>输出英雄的 <strong>坐标原点(<code>x</code>和<code>y</code>)</strong></li>
+<li>输出英雄的 <strong>尺寸(宽度和高度)</strong></li>
+</ol>
+<h3>1.3创建游戏主窗口</h3>
+<ul>
+<li><code>pygame</code>专门提供了一个<strong>模块</strong> <code>pygame.display</code>用于创建、管理<strong>游戏窗口</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+	<th>方法</th>
+	<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>pygame.display.set_mode()</td>
+	<td>初始化游戏显示窗口</td>
+</tr>
+<tr>
+	<td>pygame.display.update()</td>
+	<td>刷新屏幕内容显示，稍后使用</td>
+</tr>
+</tbody>
+</table>
+<p><code>set_mode()</code>方法</p>
+<pre><code>    set_mode(resolution=(0,0),flags=0,depth=0) -&gt; Surface
+</code></pre>
+
+<ul>
+<li>作用 -- 创建游戏显示窗口</li>
+<li>
+参数
+<ul>
+<li><code>resolution</code>指定屏幕的<code>宽</code>和<code>高</code>，默认创建的窗口大小和屏幕大小一致</li>
+<li><code>flags</code>参数指定屏幕的附加选项，例如是否全屏等等，默认不需要传递</li>
+<li><code>depth</code>参数表示颜色的位数，默认自动怕匹配、</li>
+</ul>
+</li>
+<li>
+返回值
+<ul>
+<li>暂时 可以理解为 <strong>游戏的屏幕，游戏的元素</strong> 都需要被绘制到 <strong>游戏的屏幕</strong> 上</li>
+</ul>
+</li>
+<li>
+<p>注意: 必须使用变量记录 <code>set_mode()</code>方法的返回结果！因为：后续所有的图像绘制都基于这个返回结果</p>
+<pre><code>#创建游戏主窗口
+screen = pygame.display.set_mode((480,700))
+</code></pre>
+
+</li>
+</ul>
+<h3>1.4简单的游戏循环</h3>
+<ul>
+<li>为了做到游戏程序启动后，<strong>不会立刻推出</strong>，通常在游戏程序中增加一个<strong>游戏循环</strong></li>
+<li>所谓 <strong>游戏循环</strong> 就是一个 <strong>无限循环</strong></li>
+<li>
+<p>在 <strong>创建游戏窗口</strong> 代码下方，增加一个无限循环</p>
+<ul>
+<li>
+<p>注意: <strong>游戏窗口不需要重复创建</strong></p>
+<pre><code># 创建游戏主窗口
+screen = pygame.display.set_mode((480,700))
+# 游戏循环
+while True:
+    pass
+</code></pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>02.理解 图像并实现图像绘制</h2>
+<ul>
+<li>
+在游戏中，能够看到的 <strong>游戏元素</strong> 大多都是 <strong>图像</strong>
+<ul>
+<li><strong>图像文件</strong>初始是保存在磁盘上的，如果需要使用，第一步 就需要 被加载到内存中</li>
+</ul>
+</li>
+<li>
+要在屏幕上 <strong>看到某一个图像的内容</strong>，需要按照三个步骤：
+<ol>
+<li>使用<code>pygame.image.load()</code>加载图像的数据</li>
+<li>使用 <strong>游戏屏幕</strong> 对象，调用 <code>blit()</code>方法将图像绘制到指定位置</li>
+<li>调用 <code>pygame.display.update()</code>方法更新整个屏幕的显示</li>
+</ol>
+</li>
+</ul>
+<p><img src="hzimage.png" alt="绘制图像" /></p>
+<blockquote>
+<p>提示: 要想在屏幕上看到绘制的结果，就一定要调用 <code>pygame.display.update()</code>方法</p>
+</blockquote>
+<h4>代码演练I -- 绘制背景图像</h4>
+<h5>需求</h5>
+<ol>
+<li>加载 <code>background.png</code> 创建背景</li>
+<li>将 <strong>背景</strong> 绘制在屏幕的 <code>(0,0)</code> 位置</li>
+<li>调用屏幕更新显示背景图像</li>
+</ol>
+<h4>代码演练II -- 绘制英雄图像</h4>
+<h5>需求</h5>
+<ol>
+<li>加载 <code>me1.png</code> 创建英雄飞机</li>
+<li>将<strong>英雄飞机</strong>绘制在屏幕的 <code>(200,500)</code>位置</li>
+<li>
+<p>调用屏幕更新显示飞机图像</p>
+<pre><code># 1. 加载图像数据
+bg = pygame.image.load(&quot;./素材/images/me1.png&quot;)
+# 2. blit绘制图像
+screen.blit(bg,(0,0))
+# 3. update 更新屏幕显示
+pygame.display.update()
+</code></pre>
+
+</li>
+</ol>
+<h5>透明图像</h5>
+<ul>
+<li><code>png</code>格式的图像是支持透明的</li>
+<li>在绘制图像时，<strong>透明区域</strong>不会显示任何内容</li>
+<li>但是如果<strong>下方已有内容</strong>，会 <strong>透过 透明区域</strong> 显示出来</li>
+</ul>
+<h3>理解 update()方法的作用</h3>
+<blockquote>
+<p>可以在<code>screen</code>对象完成 <strong>所有</strong> <code>blit</code>方法之后，统一调用一次 <code>display.update()</code>方法，
+同样可以在屏幕上看到最终的绘制结果
+- 使用 <code>display.set_mode()</code>创建的 <code>screen</code>对象是一个内存中的屏幕数据对象
+    - 可以理解成时 油画的画布
+- <code>screen.blit</code>方法可以在画布上绘制很多图像
+    - 例如：英雄、敌机、子弹
+    - 这些图像 有可能 会彼此重叠或者覆盖
+- <code>display.update()</code>会将画布的最终结果绘制在屏幕上，这样可以 提高屏幕绘制效率，增加游戏的流畅度</p>
+</blockquote>
+<h4>案例调整</h4>
+<pre><code>    import pygame
+    from time import  clock
+    pygame.init()
+
+    # 创建游戏窗口
+    screen = pygame.display.set_mode(size=(480,700))
+
+    # 绘制背景图像
+    bg = pygame.image.load(&quot;./素材/images/bg.png&quot;)
+    screen.blit(bg,(0,0))
+
+    # 绘制英雄的飞机
+    me1 = pygame.image.load(&quot;./素材/images/me1.png&quot;)
+    screen.blit(me1,(200,500))
+
+    # 可以在所有绘制工作完成之后，统一调用update方法
+    pygame.display.update()
+
+    # 游戏循环
+    while True:
+        #clock.tick(60)  # 通过tick方法每秒刷新60帧
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                print(&quot;退出游戏……&quot;)
+</code></pre>
+
+<h2>03.理解游戏循环和游戏时钟</h2>
+<blockquote>
+<p>现在英雄飞机已经被绘制到屏幕上了，怎么能够让飞机移动呢？</p>
+</blockquote>
+<h3>3.1游戏中的动画实现原理</h3>
+<ul>
+<li>
+跟 <strong>电影</strong>的原理类似，游戏中的动画效果，本质上时快速的在屏幕上绘制图像
+-电影是将多张<strong>静止的电影胶片连续、快速的</strong>播放，产生连贯的视觉效果
+</li>
+<li>
+一般在电脑上每秒绘制60次，就能够达到非常连续高品质的动画效果
+<ul>
+<li>每次绘制的结果被称为 <strong>帧Frame</strong></li>
+</ul>
+</li>
+</ul>
+<h3>3.2游戏循环</h3>
+<h4>游戏的两个组成部分</h4>
+<blockquote>
+<p>游戏循环的开始 就意味着 游戏的正式开始</p>
+</blockquote>
+<p><img src="gamerecurrent.png" alt="游戏循环" /></p>
+<h4>游戏循环的作用</h4>
+<ol>
+<li>保证游戏不会直接退出</li>
+<li>
+变化图像位置 -- 动画效果
+<ul>
+<li>每隔<code>1/60秒</code>移动一下所有图像的位置</li>
+<li>调用 <code>pygame.display.update()</code>更新屏幕显示</li>
+</ul>
+</li>
+<li>检测用户交互 -- 按键、鼠标等</li>
+</ol>
+<h3>3.3 游戏时钟</h3>
+<ul>
+<li><code>pygame</code>专门提供一个类 <code>pygame.time.Clock</code>可以非常方便的设置屏幕绘制速度 -- 刷新帧率</li>
+<li>
+要使用 时钟对象 需要两步：
+<ul>
+<li>在游戏初始化创建一个时钟对象</li>
+<li>在游戏循环中让时钟对象调用 <code>tick(帧率)</code>方法</li>
+</ul>
+</li>
+<li><code>tick</code>方法会根据上次被调用的时间，自动设置游戏循环中的延时</li>
+</ul>
+<h3>3.4英雄的简单动画实现</h3>
+<h4>需求</h4>
+<ol>
+<li>在游戏初始化定义一个 <code>pygame.Rect</code>的变量记录英雄的初始位置</li>
+<li>在游戏循环中每次让英雄的 <code>y-1</code>--向上移动</li>
+<li><code>y&lt;=0</code>将英雄移动到屏幕底部</li>
+</ol>
+<blockquote>
+<p>提示:
+- 每一次调用 <code>update()</code>方法之前，需要把所有的游戏图像都重新绘制一遍
+- 而且应该最先重新绘制背景图像</p>
+</blockquote>
+<pre><code># 1. 定义Rect记录飞机的初始位置
+hero_rect = pygame.Rect(200,500,102,126)
+
+# 游戏循环 -&gt; 意味着游戏的正式开始
+while True:
+    # 指定循环体内不代码执行的帧率
+    clock.tick(60)  # 通过tick方法每秒刷新60帧
+
+    # 2. 修改飞机位置
+    if hero_rect.y&gt;-hero_rect.height:
+        hero_rect.y -= 1
+    else:
+        hero_rect.y = 700
+
+    # 3. 调用blit方法绘制图像
+    # 如果只绘制飞机图像，会出现飞机残影
+    # 解决办法：先重新绘制背景图像直接遮挡先前图像，再绘制飞机
+    screen.blit(bg, (0, 0))#重新绘制背景图像
+    screen.blit(me1,hero_rect)
+
+    # 4. 调用update方法更新显示
+    pygame.display.update()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            print(&quot;退出游戏……&quot;)
+</code></pre>
+
+<h4>作业</h4>
+<ol>
+<li>英雄向上飞行，当英雄完全从上方飞出屏幕后</li>
+<li>
+<p>将飞机移动到屏幕底部</p>
+<pre><code>#2. 修改飞机位置
+if hero_rect.y&gt;- hero_rect.height:
+    hero_rect.y -= 1
+else:
+    hero_rect.y = 700
+</code></pre>
+
+</li>
+</ol>
+<h3>3.5 在游戏循环中 监听 事件</h3>
+<h4>事件 event</h4>
+<ul>
+<li>就是游戏启动后，用户针对游戏所做的操作</li>
+<li>例如：点击关闭按钮，点击鼠标，按下键盘。。。</li>
+</ul>
+<h4>监听</h4>
+<ul>
+<li>再游戏循环中，判断用户 具体的操作</li>
+</ul>
+<blockquote>
+<p>只有捕获到用户具体的操作，才能有针对性的做出响应</p>
+</blockquote>
+<h4>代码实现</h4>
+<ul>
+<li>
+<code>pygame</code>中通过 `pygame.event.get()可以获得用户当前所做动作的事件列表
+<ul>
+<li>用户可以同一时间做很多事情</li>
+</ul>
+</li>
+<li>
+<p>提示: 这段代码非常的固定，几乎所有的 <code>pygame</code>游戏都大同小异</p>
+<pre><code>clock = pygame.time.Clock()
+#游戏循环
+while True:
+    # 设置屏幕刷新帧率
+    clock.tick(60)
+    #事件监听
+    # pygame.event.get() 返回值 list
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            print(&quot;退出游戏……&quot;)
+            pygame.quit()
+            # 直接退出系统
+            exit()
+</code></pre>
+
+</li>
+</ul>
+<h2>04 理解精灵和精灵组</h2>
+<h3>4.1 精灵和精灵组</h3>
+<ul>
+<li>再刚刚完成的案例中，图像加载、位置变化、绘制图像都需要程序员编写代码分别处理</li>
+<li>
+为了简化开发步骤，<code>pygame</code>提供了两个类
+<ul>
+<li><code>pygame.sprite.Sprite</code>--存储图像数据 image和 位置rect的对象</li>
+<li><code>pygame.sprite,Group</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="jl.png" alt="精灵和精灵组" /></p>
+<h3>4.2 派生精灵子类</h3>
+<ol>
+<li>新建 <code>plane_sprites.py</code>文件</li>
+<li>定义 <code>GameSprite</code> 继承自 `pygame.sprite.Sprite</li>
+</ol>
+<h4>注意</h4>
+<ul>
+<li>如果一个类的 父类 不是 <code>object</code></li>
+<li>在重写初始化方法时，一定要 先 <code>super()</code>一下父类的 <code>__init__</code>方法</li>
+<li>保证父类中实现的 <code>__init__</code>代码能够被正常执行</li>
+</ul>
+<p><img src="gameSprite.png" alt="精灵类" /></p>
+<h4>属性</h4>
+<ul>
+<li><code>image</code>精灵图像，使用 <code>image_name</code>加载</li>
+<li><code>rect</code>精灵大小，默认使用图像大小</li>
+<li><code>speed</code>精灵移动速度，默认为 <code>1</code></li>
+</ul>
+<h4>方法</h4>
+<ul>
+<li>
+<code>update</code>每次更新屏幕时在游戏循环内调用
+<ul>
+<li>让精灵的 <code>self.rect.y+=self.speed</code></li>
+</ul>
+</li>
+</ul>
+<h4>提示</h4>
+<ul>
+<li>
+<p><code>Image</code>的 <code>get_rect()</code>方法，可以返回pygame.Rect(0,0,图像宽,图像高)的对象</p>
+<pre><code>import pygame
+
+class GameSprite(pygame.sprite.Sprite):
+    &quot;&quot;&quot;飞机大战游戏精灵&quot;&quot;&quot;
+    def __init__(self,image_name,speed=1):
+
+        # 调用父类的初始化方法
+        super().__init__()
+
+        # 定义对象的属性
+        self.image = pygame.image.load(image_name)
+        self.rect = self.image.get_rect()
+        self.speed = speed
+
+    def update(self):
+
+        # 在屏幕的垂直方向上移动
+        self.rect.y +=self.speed
+</code></pre>
+
+</li>
+</ul>
+<h3>4.3 使用 游戏精灵和精灵组创建敌机</h3>
+<h4>需求</h4>
+<ul>
+<li>使用刚刚派生的<strong>游戏精灵</strong>和<strong>精灵组</strong> 创建敌机并且实现敌机动画</li>
+</ul>
+<h4>步骤</h4>
+<ol>
+<li>
+使用 <code>from</code> 导入 <code>plane_sprite</code>模块
+<ul>
+<li><code>from</code>导入的模块可以直接使用</li>
+<li><code>import</code>导入的模块需要通过模块名来使用</li>
+</ul>
+</li>
+<li>在游戏初始化创建精灵对象和精灵组对象</li>
+<li>在游戏循环中让精灵组分别调用 <code>update()</code>和 <code>draw(screen)</code>方法</li>
+</ol>
+<h4>职责</h4>
+<ul>
+<li>
+精灵
+<ul>
+<li>封装 <strong>图像image</strong>、<strong>位置rect<strong>和</strong>速度speed</strong></li>
+<li>提供 <code>update()</code>方法，根据游戏需求，<strong>更新位置rect</strong></li>
+</ul>
+</li>
+<li>
+精灵组
+<ul>
+<li>包含多个精灵对象</li>
+<li><code>update</code>方法，让精灵组中的所有精灵调用<code>update</code>方法更新位置</li>
+<li><code>draw()</code>方法，在<code>screen</code>上绘制精灵组中的所有精灵</li>
+</ul>
+</li>
+</ul>
+<h1>游戏框架搭建</h1>
+<p>目标 -- 使用<strong>面向对象</strong>设计<strong>飞机大战游戏类</strong></p>
+<h2>目标</h2>
+<ul>
+<li>明确主程序职责</li>
+<li>实现主程序类</li>
+<li>准备游戏精灵组</li>
+</ul>
+<h2>01.明确主程序职责</h2>
+<ul>
+<li>
+回顾 <strong>快速入门案例</strong>，一个游戏主程序的<strong>职责</strong>可以分为两个部分：
+<ul>
+<li>游戏初始化</li>
+<li>游戏循环</li>
+</ul>
+</li>
+<li>根据明确的职责，设计 <code>PlaneGame</code>类如下：</li>
+</ul>
+<p><img src="PlaneGame.png" alt="飞机大战游戏类" /></p>
+<blockquote>
+<p><strong>提示</strong> 根据 <strong>职责</strong>封装私有方法，可以避免某一个方法的代码写得太过冗长
+如果某一个方法编写的太长，既不好阅读，也不好维护
+- **游戏初始化 -- <code>__init__()</code>会调用一下方法:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>方法</th>
+	<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>__event_handler(self)</td>
+	<td>事件监听</td>
+</tr>
+<tr>
+	<td>__check_collide(self)</td>
+	<td>碰撞检测 -- 子弹销毁敌机、敌机撞毁英雄</td>
+</tr>
+<tr>
+	<td>__update_sprites(self)</td>
+	<td>精灵组更新和绘制</td>
+</tr>
+<tr>
+	<td>__game_over()</td>
+	<td>游戏结束</td>
+</tr>
+</tbody>
+</table>
+<h2>02.实现飞机大战主游戏类</h2>
+<h3>2.1 明确文件职责</h3>
+<p><img src="file.png" alt="文件职责" /></p>
+<ul>
+<li>
+<code>plane_main</code>
+<ol>
+<li>封装 <strong>主游戏类</strong></li>
+<li>创建<strong>游戏对象</strong></li>
+<li>启动游戏</li>
+</ol>
+</li>
+<li>
+<code>plane_sprites</code>
+<ul>
+<li>封装游戏中所有需要使用的精灵子类</li>
+<li>提供游戏的相关工具</li>
+</ul>
+</li>
+</ul>
+<h4>代码实现</h4>
+<ul>
+<li>新建 <code>plane_main.py</code>文件，并且设置为可执行</li>
+<li>
+<p>编写 <strong>基础代码</strong></p>
+<pre><code>import pygame
+
+class PlaneGame(object):
+    &quot;&quot;&quot;飞机大战主游戏&quot;&quot;&quot;
+
+    def __init__(self):
+        print(&quot;游戏初始化&quot;)
+
+        # 1. 创建游戏的窗口
+        self.screen = pygame.display.set_mode((480,700))
+        # 2. 创建游戏的时钟
+        self.clock = pygame.time.Clock()
+        # 3. 调用私有方法，精灵和精灵组的创建
+        self.__create_sprites()
+
+    def __create_sprites(self):
+        pass
+</code></pre>
+
+</li>
+</ul>
+<h4>使用 常量 代替固定数值</h4>
+<blockquote>
+<ul>
+<li>常量 -- 不变化的量</li>
+<li>变量 -- 可以变化的量</li>
+</ul>
+</blockquote>
+<h4>应用场景</h4>
+<ul>
+<li>在开发时，可能会需要使用 固定式的数值，例如 屏幕的高度 时 <code>700</code></li>
+<li>这个时候，建议 <strong>不要</strong>直接使用固定数值，而应该使用 <strong>常量</strong></li>
+<li>在开发时，为了保证代码的可维护性，尽量不要使用 <strong>魔法数字</strong></li>
+</ul>
+<h4>常量的定义</h4>
+<ul>
+<li>定义 <strong>常量</strong>和定义 <strong>变量</strong>的语法完全一样，都是使用 <strong>赋值语句</strong></li>
+<li><strong>常量</strong>的 <strong>命名</strong> 应该 <strong>所有字母都是用大写，单词与单词之间使用下划线连接</strong></li>
+</ul>
+<h4>常量的好处</h4>
+<ul>
+<li>阅读代码时，通过 <strong>常量名 见名知意</strong>，不需要猜测数字的含义</li>
+<li>如果需要 <strong>调整值</strong> ，只需要 <strong>修改常量定义</strong> 就可以实现 <strong>统一修改</strong></li>
+</ul>
+<blockquote>
+<p>提示： Python中并没有真正意义的常量，只是通过命名的约定 -- 所有字母大写的就是常量，开发时不要轻易的修改！</p>
+</blockquote>
+<h4>代码调整</h4>
+<ul>
+<li>在 <code>plane_sprites.py</code>中增加常量定义</li>
+</ul>
+<h1>游戏背景</h1>
+<h2>目标</h2>
+<ul>
+<li>背景交替滚动的思路确定</li>
+<li>显示游戏背景</li>
+</ul>
+<h2>01.背景交替滚动的思路确定</h2>
+<p>运行 备课代码，观察背景图像的显示效果
+- 游戏启动后，<strong>背景图像</strong>会<strong>连续不断地向下方</strong>移动
+- 在视觉上 产生英雄地飞机不断向上方飞行地 <strong>错觉</strong> -- 在很多跑酷类游戏中常用地套路
+    - 游戏地背景 不断变化
+    - 游戏地主角 位置保持不变</p>
+<h3>1.1 实现思路分析</h3>
+<p><img src="bg_roll.png" alt="背景交替滚动" /></p>
+<h3>解决办法</h3>
+<ol>
+<li>
+创建两张背景图像精灵
+<ul>
+<li>第<code>1</code>涨完全和屏幕重合</li>
+<li>第<code>2</code>涨在屏幕地正上方</li>
+</ul>
+</li>
+<li>
+两张图像 一起向下方运动
+<ul>
+<li>`self.rect.y += self.speed</li>
+</ul>
+</li>
+<li>当 任意背景精灵地 <code>rect.y &gt;= 屏幕的高度</code>说明已经移动到屏幕下方</li>
+<li>
+将 移动到屏幕下方地这张图像设置到 屏幕的正上方
+<ul>
+<li><code>rect.y = -rect.height</code></li>
+</ul>
+</li>
+</ol>
+<h3>1.2 设计背景类</h3>
+<p><img src="gameSprite.png" alt="背景类" /></p>
+<ul>
+<li>
+初始化方法
+<ul>
+<li>直接指定背景图片</li>
+<li>
+<code>is_alt</code>判断是否是另一张图像
+<ul>
+<li><code>False</code>表示 第一张图像，需要与屏幕重合</li>
+<li><code>True</code>表示 另一张图像，在屏幕的正上方</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+update()方法
+<ul>
+<li>判断 <strong>是否移动出屏幕</strong>，如果是，将图像设置到屏幕的正上方，从而实现 <strong>交替滚动</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>继承</strong>如果父类提供的方法，不能满足子类的需求
+- 派生一个子类
+- 在子类中针对特有的需求，重写父类方法，并且进行扩展 </p>
+</blockquote>
+<h2>02.显示游戏背景</h2>
+<h3>2.1 背景精灵的基本实现</h3>
+<ul>
+<li>
+<p>在<code>plane_sprites</code>新建<code>Background</code>继承自<code>GameSprtie</code></p>
+<pre><code>class Background(GameSprite):
+    &quot;&quot;&quot;游戏背景精灵&quot;&quot;&quot;
+
+    def update(self):
+
+        # 1. 调用父类的方法实现
+        super().update()
+        # 2. 判断是否移出屏幕,如果移出屏幕，将图像设置到屏幕的上方,
+        if self.rect.y &gt;= SCREEN_RECT.height
+            self.rect.y = -self.rect.height
+</code></pre>
+
+</li>
+</ul>
+<h3>2.2 在plane_main.py中显示背景精灵</h3>
+<ol>
+<li>在 <code>__create_sprites</code>方法中创建精灵和精灵组</li>
+<li>在 <code>__update_sprites</code>方法中，让精灵组调用 <code>update()</code>和<code>draw()</code>方法</li>
+</ol>
+<blockquote>
+<p><code>__create_sprites</code>方法</p>
+</blockquote>
+<pre><code>    def __create_sprites(self):
+
+        # 创建背景精灵和精灵组
+        bg1 = Background('./素材/images/bg.png')
+        bg2 = Background('./素材/images/bg.png')
+        bg2.rect.y = -bg2.rect.height # 初始化第二章背景精灵位置
+        self.back_group = pygame.sprite.Group(bg1,bg2)
+
+    def __update_sprites(self):
+
+        self.back_group.update()
+        self.back_group.draw(self.screen)
+</code></pre>
+
+<h3>2.3 利用初始化方法，简化背景精灵创建</h3>
+<blockquote>
+<p>思考 -- 上一小节完成的代码存在什么样的问题？能否简化？
+- 在主程序中，创建的两个北京经理，传入了相同的图像文件路径
+- 创建 第二个背景精灵时，在主程序中，设置背景精灵的图像位置
+思考 -- 精灵初始位置的设置，应该由主程序负责？还是由精灵自己负责？</p>
+</blockquote>
+<p>答案 -- 由精灵自己负责
+- 根据面向对象设计原则，应该将对象的职责，封装到类的代码内部
+- 尽量简化程序调用一方的代码调用</p>
+<p><img src="gameSprite_new.png" /></p>
+<ul>
+<li>
+初始化方法
+<ul>
+<li>直接指定背景图片</li>
+<li>
+<code>is_alt</code>判断是否是另一张图像
+<ul>
+<li><code>False</code>Biaoshi第一张图像，需要与屏幕怒重合</li>
+<li><code>True</code>表示另一张图像，在屏幕的正上方
+在 <code>plane_sprites.py</code>中实现 <code>Background</code>的初始化方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>敌机出场</h1>
+<h2>目标</h2>
+<ul>
+<li>使用 <strong>定时器</strong>添加敌机</li>
+<li>设计<code>Enemy</code>类</li>
+</ul>
+<h2>01.使用定时器添加敌机</h2>
+<p>运行<strong>备课代码</strong>，观察敌机的<strong>出现规律</strong>
+1. 游戏启动后，<strong>每隔一秒</strong>会<strong>出现一架敌机</strong>
+2. 每架飞机<strong>向屏幕下方飞行</strong>，飞行<strong>速度各不相同</strong>
+3. 每架敌机出现的 <strong>水平位置</strong>也不尽相同
+4. 当敌机<strong>从屏幕下方飞出</strong>，不会再飞回到屏幕中</p>
+<h3>1.1 定时器</h3>
+<ul>
+<li>再 <code>pygame</code>中可以使用 <code>pygame.set_timer()</code>来添加 <strong>定时器</strong></li>
+<li>
+<p>所谓 <strong>定时器</strong>， 就是 <strong>每隔一段时间<strong>，去</strong>执行一些动作</strong></p>
+<p><code>set_timer(eventid,milliseconds) -&gt; None</code></p>
+</li>
+<li>
+<p><code>set_timer</code>可以创建一个<strong>事件</strong></p>
+</li>
+<li>可以在 <strong>游戏循环</strong>的<strong>事件监听</strong>方法中捕获该事件</li>
+<li>
+第一个参数 <strong>事件代号</strong>需要基于常量<code>pygame.USEREVENT</code>来指定
+<ul>
+<li><code>USEREVENT</code>是一个整数，再添加的事件可以使用 <code>USEREVENT + 1</code>指定，依此类推...</li>
+</ul>
+</li>
+<li>第二个参数是 <strong>事件触发</strong>间隔的 <strong>毫秒值</strong></li>
+</ul>
+<h4>定时器事件的监听</h4>
+<ul>
+<li>通过 <code>pygame.event.get()</code>可以获取当前时刻所有的事件列表</li>
+<li>遍历列表并且判断 <code>event.type</code>是否等于<code>eventid</code>，如果相等，表示<strong>定时器事件</strong>发生</li>
+</ul>
+<h3>1.2 定义并监听创建敌机的定时器事件</h3>
+<p><code>pygame</code>的定时器使用套路非常固定:
+1. 定义定时器常量 -- eventid
+2. 在初始化方法中，调用 <code>set_timer</code>方法设置定时器事件
+3. 在游戏循环中，监听定时器事件</p>
+<h4>1)定义事件</h4>
+<ul>
+<li>
+<p>在 <code>plane_sprties.py</code>的顶部定义 时间常量</p>
+<pre><code># 敌机出现事件
+CREATE_ENEMY_EVENT = pygame.USEREVENT    
+</code></pre>
+
+</li>
+</ul>
+<h2>02.设计Enemy类</h2>
+<ol>
+<li>游戏启动后，每隔一秒会出现一架敌机</li>
+<li>每架敌机向屏幕下方飞行，飞行速度各不相同</li>
+<li>每架敌机出现的水平位置也不尽相同</li>
+<li>当敌机从屏幕下方飞出，不会再飞回到屏幕中</li>
+</ol>
+<p><img src="enemy.png" alt="Enemy类" /></p>
+<ul>
+<li>
+初始化方法
+<ul>
+<li>指定敌机图片</li>
+<li>随机敌机的初始位置和初始速度</li>
+</ul>
+</li>
+<li>
+重写 update()方法
+<ul>
+<li>判断 是否飞出屏幕，如果是，从精灵组删除</li>
+</ul>
+</li>
+</ul>
+<h3>2.1 敌机类的准备</h3>
+<pre><code>class Enemy(GameSprite):
+    def __init__(self):
+
+        # 1. 调用父类方法，创建敌机精灵，同时指定敌机图片
+        super(Enemy, self).__init__(&quot;./素材/images/enemy1.png&quot;)
+        # 2. 指定敌机的初始随机速度
+        self.speed = 1
+        # 3. 指定敌机的初始随机位置
+
+    def update(self):
+
+        # 1. 调用父类方法，保持垂直方向的飞行
+        super(Enemy, self).update()
+        # 2. 判断是否飞出屏幕，如果是，需要从精灵组删除。
+        if self.rect.y &gt;= SCREEN_RECT.height:
+            print(&quot;飞出屏幕，需要从精灵组删除....&quot;)
+</code></pre>
+
+<h3>2.2 创建敌机</h3>
+<h4>演练步骤</h4>
+<ol>
+<li>
+在 <code>create_sprites</code>,添加 敌机精灵组
+<ul>
+<li>敌机是定时被 和=创建的，因此在初始化方法中，不需要创建敌机</li>
+</ul>
+</li>
+<li>
+在 <code>__event_handler</code>,创建敌机，并且添加到精灵组
+<ul>
+<li>调用精灵组的 <code>add</code>方法，可以向精灵组添加精灵</li>
+</ul>
+</li>
+<li>在 <code>__ypdate_sprites</code>,让敌机精灵组调用 <code>update</code>和 <code>draw</code>方法</li>
+</ol>
+<p><img src="enemy_sprite_group.png" /></p>
+<h4>演练代码</h4>
+<ul>
+<li>
+<p>修改 <code>plane_main</code>的 <code>__create_sprites</code>方法</p>
+<pre><code># 创建敌机的精灵组
+self.enemy_group = pygame.sprite.Group()
+</code></pre>
+
+</li>
+<li>
+<p>修改 <code>plane_main</code>的 <code>__update_sprites</code>方法</p>
+<pre><code># 敌机精灵组
+self.enemy_group.update()
+self.enemy_group.draw(self.screen)
+</code></pre>
+
+</li>
+<li>
+<p>定时出现敌机</p>
+<pre><code>elif event.type == CREATE_ENEMY_EVENT:
+    print(&quot;敌机出现...&quot;)
+    # 创建敌机精灵
+    enemy = Enemy()
+    # 将敌机精灵添加到敌机精灵组
+    self.enemy_group.add(enemy)
+</code></pre>
+
+</li>
+</ul>
+<h3>2.3 随机敌机位置和速度</h3>
+<h4>1) 导入模块</h4>
+<ul>
+<li>
+<p>在导入模块时，建议按照一下顺序导入</p>
+<pre><code>1. 官方标准模块导入
+2. 第三方模块导入
+3. 应用程序模块导入
+</code></pre>
+
+</li>
+<li>
+<p>修改 <code>plane_sprites.py</code>增加 <code>random</code>的导入</p>
+<p><code>import random</code></p>
+</li>
+</ul>
+<h4>2)随机位置</h4>
+<p><img src="random_pos.png" alt="随机位置" /></p>
+<p>使用 <code>pygame.Rect</code>提供的<code>bottom</code>属性，在指定敌机初始位置时，会比较方便</p>
+<ul>
+<li><code>bottom = y + height</code></li>
+<li><code>y = bottom - height</code></li>
+</ul>
+<h4>3)代码实现</h4>
+<ul>
+<li>
+<p>修改初始化方法，随机敌机出现速度和位置</p>
+<pre><code>def __init__(self):
+    # 1. 调用父类方法，创建敌机精灵，同时指定敌机图片
+    super(Enemy, self).__init__(&quot;./素材/images/enemy1.png&quot;)
+    # 2. 指定敌机的初始随机速度
+    self.speed = random.randint(1, 3)
+    # 3. 指定敌机的初始随机位置
+    self.rect.bottom = 0
+    max_x = SCREEN_RECT.width - self.rect.width
+    self.rect.x = random.randint(0, max_x)
+</code></pre>
+
+</li>
+</ul>
+<h3>2.4 移出屏幕销毁敌机</h3>
+<ul>
+<li>
+<p>敌机移出屏幕之后，如果没有撞到英雄，敌机的历史使命已经终结</p>
+</li>
+<li>
+<p>需要从敌机组删除，否则会造成内存浪费。</p>
+</li>
+</ul>
+<h4>检测敌机被销毁</h4>
+<ul>
+<li>
+<p><code>__del__</code>内置方法会在对象被销毁前调用，在开发时，可以用于 判断对象是否被销毁</p>
+<pre><code>def __del__(self):
+    print(&quot;敌机挂了 %s&quot; % self.rect)
+</code></pre>
+
+</li>
+</ul>
+<h4>代码实现</h4>
+<p><img src="del.png" /></p>
+<ul>
+<li>
+<p>判断敌机是否飞出屏幕，如果是，调用<code>kill()</code>方法从所有组中删除</p>
+<pre><code>def update(self):
+    # 1. 调用父类方法，保持垂直方向的飞行
+    super(Enemy, self).update()
+    # 2. 判断是否飞出屏幕，如果是，需要从精灵组删除。
+    if self.rect.y &gt;= SCREEN_RECT.height:
+        print(&quot;飞出屏幕，需要从精灵组删除....&quot;)
+        # kill方法可以将精灵从所有精灵组中移出，精灵被自动销毁
+        self.kill()
+</code></pre>
+
+</li>
+</ul>
+<h1>英雄登场</h1>
+<h2>目标</h2>
+<ul>
+<li>设计 英雄 和子弹类</li>
+<li>使用 <code>pygame.key.get_pressed()</code>移动英雄</li>
+<li>发射子弹</li>
+</ul>
+<h2>01.设计英雄和子弹类</h2>
+<h3>英雄需求</h3>
+<ol>
+<li>游戏启动后，英雄 出现在屏幕的水平中间位置，距离屏幕底部<code>120</code>像素</li>
+<li>英雄每隔<code>0.5</code>秒发射一次子弹，每次，连发三枚子弹</li>
+<li>英雄默认不会移动，需要通过 左/右 方向键，控制 英雄 在水平方向移动
+<img src="hero.png" alt="英雄" /></li>
+</ol>
+<h3>子弹需求</h3>
+<ol>
+<li>子弹从英雄的正上方发射 沿直线 向 上方 飞行</li>
+<li>飞出屏幕后，需要从 精灵组 中删除
+<img src="bullet.png" alt="子弹精灵类" /></li>
+</ol>
+<h3>Hero -- 英雄</h3>
+<ul>
+<li>
+初始化方法
+<ul>
+<li>指定 英雄图片</li>
+<li>初始化速度 = 0 --英雄默认静止不动</li>
+<li>定义 <code>bullets</code>子弹精灵组保存子弹精灵</li>
+</ul>
+</li>
+<li>
+重写 update()方法
+<ul>
+<li>英雄需要水平移动</li>
+<li>并且需要保证不能移出屏幕</li>
+<li>增加 <code>bullets</code>属性，和记录所有子弹精灵</li>
+<li>增加 <code>fire</code>方法，用于发射子弹</li>
+</ul>
+</li>
+</ul>
+<p>### Bullet -- 子弹
+- 初始化方法
+    - 指定子弹图片
+    - 初始速度=-2 -- 子弹需要向上飞行
+- 重写 update()方法
+    - 判断是否飞出屏幕，如果是，从精灵组删除</p>
+<h2>02.创建英雄</h2>
+<h3>2.1 准备英雄泪</h3>
+<ul>
+<li>在 <code>plane_sprites</code>新建<code>Hero</code>类</li>
+<li>重写初始化方法，直接指定图片名称，并且将初始速度设置为<code>0</code></li>
+<li>设置 英雄的初始位置</li>
+</ul>
+<p><img src="rect.png" /></p>
+<ul>
+<li>centerx = x + 0.5 * width</li>
+<li>centery = y + 0.5 * height</li>
+<li>
+<p>bottom = y + height</p>
+<pre><code>class Hero(GameSprite):
+    &quot;&quot;&quot;英雄精灵&quot;&quot;&quot;
+    def __init__(self):
+
+        # 1. 调用父类方法，设置image &amp; speed
+        super(Hero, self).__init__(&quot;./素材/images/me1.png&quot;, speed=0)
+        # 2. 初始化英雄飞机位置
+        self.rect.centerx = SCREEN_RECT.centerx
+        self.rect.bottom = SCREEN_RECT.bottom - 120
+</code></pre>
+
+</li>
+</ul>
+<h3>2.2绘制英雄</h3>
+<p>1.在 <code>__create_sprites</code>,添加英雄精灵和英雄精灵组
+    - 后续要针对英雄做 <strong>碰撞检测</strong>以及<strong>发射子弹</strong>
+    - 所以英雄需要 <strong>单独定义成属性</strong>
+2. 在 <code>__update_sprites</code>,让 <strong>英雄精灵组</strong>调用 <code>update</code>和 <code>draw</code>方法</p>
+<h4>代码实现</h4>
+<ul>
+<li>
+<p>修改 <code>__create_sprites</code>方法如下:</p>
+<pre><code># 创建英雄的精灵和精灵组
+self.hero = Hero()
+self.hero_group = pygame.sprite.Group(self.hero)
+</code></pre>
+
+</li>
+<li>
+<p>修改 <code>__update_sprites</code>方法如下:</p>
+<pre><code>self.hero_group.update()
+self.hero_group.draw(self.screen)
+</code></pre>
+
+</li>
+</ul>
+<h2>03.移动英雄位置</h2>
+<blockquote>
+<p>在 <code>pygame</code>中针对键盘按键的捕获有两种方式
+- 第一种方式 判断 <code>event.type = pygame.KEYDOWN</code>
+- 第二种方式
+    1. 首先使用 <code>pygame.key.get_pressed()</code>返回所有按键元组
+    2. 通过 键盘常量，判断元组中 某一个键是否被按下 -- 如果被按下，对应数值为 <code>1</code>
+提问 这两种方式有什么区别呢?</p>
+</blockquote>
+<ul>
+<li>
+<p>第一种方式 按着不动只能输出一次</p>
+<pre><code>elif event.type == pygame.KEYDOWN and event,key == pygame.K_RIGHT:
+    print(&quot;向右移动...&quot;)
+</code></pre>
+
+</li>
+<li>
+<p>第二种方式</p>
+<pre><code># 返回所有按键的元组，如果某个键被按下，对应的值会是1
+keys_pressed = pygame.key.get_pressed()
+# 判断是否按下了方向键
+if keys_pressed[pygame.K_RIGHT]:
+    print(&quot;向右移动...&quot;)
+</code></pre>
+
+</li>
+</ul>
+<h4>结论</h4>
+<ul>
+<li>第一种方式 <code>event.type</code>用户 必须要抬起按键 才算一次 按键事件，操作灵活性会大打折扣</li>
+<li>第二种方式 用户可以按住方向键不妨，就能够实现持续向某一个方向移动了，操作灵活性更好</li>
+</ul>
+<h3>3.1 移动英雄位置</h3>
+<h4>演练步骤</h4>
+<ol>
+<li>
+在 <code>Hero</code>类中重写 <code>update</code>方法
+<ul>
+<li>用速度<code>speed</code>和英雄<code>rect.x</code>进行叠加</li>
+<li>不需要调用父类方法 -- 父类方法只是实现了单纯的垂直运动</li>
+</ul>
+</li>
+<li>
+在 <code>_-event_handler</code>方法中根据左右方向键 设置英雄的速度
+<ul>
+<li>向右 =&gt; <code>speed = 2</code></li>
+<li>向左 =&gt; <code>speed = -2</code></li>
+<li>其它 =&gt; <code>speed = 0</code></li>
+</ul>
+</li>
+</ol>
+<h4>代码演练</h4>
+<ul>
+<li>在 <code>Hero</code>类，重写 <code>update()</code>方法，根据速度水平移动英雄的飞机</li>
+</ul>
+<h3>3.2 控制英雄运动边界</h3>
+<ul>
+<li>在 <code>Hero</code>类的 <code>update()</code>方法判断英雄是否超出屏幕边界</li>
+</ul>
+<p><img src="rect.png" /></p>
+<ul>
+<li><code>right = x + width</code> 利用 <code>right</code>属性可以非常容易地针对右侧设置精灵位置</li>
+</ul>
+<p><img src="border.png" alt="英雄边界" /></p>
+<pre><code>    class Hero(GameSprite):
+        &quot;&quot;&quot;英雄精灵&quot;&quot;&quot;
+        def __init__(self):
+
+            # 1. 调用父类方法，设置image &amp; speed
+            super(Hero, self).__init__(&quot;./素材/images/me1.png&quot;, speed=0)
+            # 2. 初始化英雄飞机位置
+            self.rect.centerx = SCREEN_RECT.centerx
+            self.rect.bottom = SCREEN_RECT.bottom - 120
+
+        def update(self):
+
+            # 英雄在水平方向移动
+            self.rect.x += self.speed
+
+            # 控制英雄不能离开屏幕
+            if self.rect.x &lt;0:
+                self.rect.x = 0
+            if self.rect.right &gt;SCREEN_RECT.right:
+                self.rect.right = SCREEN_RECT.right
+            pass
+</code></pre>
+
+<h2>04.发射子弹</h2>
+<h3>需求回顾 -- 英雄需求</h3>
+<ol>
+<li>游戏启动后，英雄 出现在屏幕地 水平中间 位置，距离 屏幕底部 <code>120</code>像素</li>
+<li>英雄每隔<code>0.5</code>秒发射一次子弹，每次连发三枚子弹</li>
+<li>英雄 默认不会移动，需要通过 左/右方向键 ，控制 英雄 在水平方向移动</li>
+</ol>
+<h3>4.1 添加发射子弹事件</h3>
+<p><code>pygame</code>地定时器 使用套路非常固定：
+1. 定义 定时器常量 -- <code>eventid</code>
+2. 在初始化方法中，调用 <code>set_timer</code>方法设置定时器事件
+3. 在 游戏循环中，监听定时器事件</p>
+<h4>代码实现</h4>
+<ul>
+<li>
+<p>在 <code>Hero</code>中定义 <code>fire</code>方法</p>
+<pre><code>def fire(self):
+    print(&quot;发射子弹...&quot;)
+</code></pre>
+
+</li>
+<li>
+<p>在 <code>__init__</code>方法中创建定时器</p>
+<pre><code># 每隔 0.5 秒发射一次子弹
+pygame.time.set_timer(HERO_FIRE_EVENT, 500)
+</code></pre>
+
+</li>
+<li>
+<p>在 <code>__event_handler</code>方法中让英雄发射子弹</p>
+<pre><code>elif event.type == HERO_FIRE_EVENT:
+    self.hero.fire()
+</code></pre>
+
+</li>
+</ul>
+<h3>4.2 定义子弹类</h3>
+<h4>需求回顾 -- 子弹需求</h4>
+<ol>
+<li>子弹 从 英雄的正上方发射 沿直线 向 上方 飞行</li>
+<li>飞出屏幕后， 需要从 精灵组 删除</li>
+</ol>
+<h4>Bullet -- 子弹</h4>
+<ul>
+<li>
+初始化方法
+<ul>
+<li>指定子弹图片</li>
+<li>初始速度 = -2 -- 子弹需要向上方飞行</li>
+</ul>
+</li>
+<li>
+重写update()方法
+<ul>
+<li>判断 是否飞出屏幕，如果是，从 精灵组 删除</li>
+</ul>
+</li>
+</ul>
+<h4>定义子弹类</h4>
+<ul>
+<li>在 <code>plane_sorites</code>新建 <code>Bullet</code>集成自<code>GameSprite</code></li>
+<li>重写 初始化方法，直接指定图片名称，并且设置初始速度</li>
+<li>重写 <code>update()</code> 方法, 判断子弹 飞出屏幕从精灵组删除</li>
+</ul>
+<h3>4.3 发射子弹</h3>
+<h4>演练步骤</h4>
+<ol>
+<li>在 <code>Hero</code>的初始化方法中创建 子弹精灵组 属性</li>
+<li>修改 <code>plane_main.py</code>的<code>__update_sprites</code>方法，让子弹精灵组调用<code>update</code>和<code>draw</code>方法</li>
+<li>
+实现<code>fire</code>方法
+<ul>
+<li>创建子弹精灵</li>
+<li>设置初始位置 -- 在英雄的正上方</li>
+<li>将子弹添加到精灵组</li>
+</ul>
+</li>
+</ol>
+<h4>代码实现</h4>
+<ul>
+<li>
+<p>初始化方法</p>
+<pre><code># 创建子弹组
+self.bullets = pygame.sprite.Group()
+</code></pre>
+
+</li>
+<li>
+<p>修改 <code>fire()</code>方法</p>
+<pre><code>def fire(self):
+    print(&quot;发射子弹...&quot;)
+
+    # 1. 创建子弹精灵
+    bullet = Bullet()
+
+    # 2. 设置精灵的位置
+    bullet.rect.bottom = self.rect.y - 20
+    bullet.rect.centerx = self.rect.centerx
+
+    # 3. 将精灵添加到精灵组
+    self.bullets.add(bullet)
+</code></pre>
+
+</li>
+</ul>
+<h4>一次发射三枚子弹</h4>
+<p><img src="multi_bullets.png" alt="三枚子弹" /></p>
+<ul>
+<li>修改 <code>fire()</code>方法，一次发射三枚子弹</li>
+</ul>
+<h1>碰撞检测</h1>
+<h2>目标</h2>
+<ul>
+<li>了解碰撞检测方法</li>
+<li>碰撞实现</li>
+</ul>
+<h2>01.了解碰撞检测方法</h2>
+<ul>
+<li><code>pygame</code>提供了两个非常方便的方法可以实现碰撞检测:</li>
+</ul>
+<h4>pygame.sprite.groupcollide()</h4>
+<ul>
+<li>
+<p>两个精灵组 中 所有的精灵 的碰撞检测</p>
+<p><code>groupcpllide(group1,group2,dokill1,dokill2,collided = None) -&gt; Sprite_dict</code></p>
+</li>
+<li>
+<p>如果将 <code>dokill</code> 设置为 <code>True</code>，则 发生碰撞的精灵将被自动移除</p>
+</li>
+<li>
+<code>collided</code>参数适用于 计算碰撞得到回调函数
+<ul>
+<li>如果没有指定，则每个精灵必须有一个 <code>rect</code>属性</li>
+</ul>
+</li>
+</ul>
+<h4>pygame.sprite.spritecollide()</h4>
+<ul>
+<li>
+<p>判断 某个精灵 和 指定精灵组 中的精灵的碰撞</p>
+<p><code>spritecollied(sprite,group,dokill,collides = None) -&gt; Sprite_list</code></p>
+</li>
+<li>
+<p>如果将 <code>dokill</code>设置为 <code>True</code>,则 指定精灵组 中 发生碰撞的精灵将被自动移出</p>
+</li>
+<li>
+<code>collided</code>参数是用于 计算碰撞的回调函数
+<ul>
+<li>如果没有指定，则每个精灵必须有一个 <code>rect</code>属性</li>
+</ul>
+</li>
+<li>返回 精灵组 中跟 精灵 发生碰撞的精灵列表</li>
+</ul>
+<h2>02.碰撞实现</h2>
+<pre><code>def __check_collide(self):
+
+    # 1. 子弹摧毁敌机
+    bullet_hit_enemies = pygame.sprite.groupcollide(self.hero.bullets, self.enemy_group, True, False)
+    if len(bullet_hit_enemies) &gt; 0:
+        for hited_enemies in bullet_hit_enemies.values():
+            for enemy in hited_enemies:
+                # print(bullet_hit_enemies)
+                # self.enemy_group.empty()
+                self.score += enemy.value
+                enemy.hit = True
+
+    # print(lists)
+    # 2. 敌机撞毁英雄
+    enemies = pygame.sprite.spritecollide(self.hero, self.enemy_group, True)
+
+    # 3. 判断列表是否有内容，如果有，则英雄牺牲，退出游戏
+    if len(enemies) &gt; 0:
+        # 让英雄牺牲
+        self.hero.hit = True
+
+
+
+        # 结束游戏
+        # PlaneGame.__game_over()
+</code></pre>
+
+<h1>扩展和完善</h1>
+<ul>
+<li>敌机和英雄飞机摧毁动画 ✔</li>
+<li>开始界面以及结束界面</li>
+<li>设置分数</li>
+<li>多样的敌机精灵</li>
+<li>多样的英雄精灵</li>
+<li>多样的子弹精灵</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
